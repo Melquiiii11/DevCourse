@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            margin: 0;
+            height: 100vh;
+        }
+
+        div{
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        
+
+        #btn {
+            background-color: red;
+            font-size: 12px;
+            color: black;
+            border-radius: 10px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRACTICA#01</title>
+</head>
+<body>
+   <div> 
+    <h1 class="h1">Background Color: 
+        <span class="color">
+            Color
+        </span></h1>
+    <br>
+    <div>
+    <button id="btn">CLICK ME</button>
+    </div>
+    </div>
+</body>
+
+    <script>
+        const colors = ["#FF5733", "#33FF57", "#3357FF", "#F1C40F", "#8E44AD",
+  "#2ECC71", "#E74C3C", "#3498DB", "#1ABC9C", "#9B59B6",
+  "#34495E", "#16A085", "#27AE60", "#2980B9", "#D35400",
+  "#C0392B", "#7F8C8D", "#BDC3C7", "#95A5A6", "#F39C12",
+  "#E67E22", "#ECF0F1", "#FF33A1", "#33FFF9", "#FF8F33",
+  "#A1FF33", "#33A1FF", "#FF3333", "#33FF33", "#3333FF",
+  "#6C3483", "#1F618D", "#117864", "#D68910", "#7D3C98",
+  "#D0ECE7", "#F5B041", "#E59866", "#B03A2E", "#F1948A",
+  "#F7DC6F", "#73C6B6", "#7FB3D5", "#BB8FCE", "#AAB7B8",
+  "#D5DBDB", "#641E16", "#512E5F", "#154360", "#145A32"];
+        let colorsLen = colors.length;
+
+        const btn = document.getElementById("btn");
+        const color = document.querySelector(".color");
+
+        btn.addEventListener("click", function() {
+            var colorRamdon = getRamdonNumber(0, colorsLen);
+            console.log(colorRamdon);
+            document.body.style.backgroundColor = colors[colorRamdon];
+        })
+
+        function getRamdonNumber(max, min){
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+
+
+    </script>
+</html>
